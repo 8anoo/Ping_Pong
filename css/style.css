@@ -1,0 +1,272 @@
+body{
+    margin: 0px;
+    background-color: #0a0e21;;
+}
+#Start{
+    /* display: none; */
+    width: 600px;
+    height: 400px;
+    background: url("../pics/back1.jpg");
+    background-size: 100%;
+    margin: 5px auto;
+    position: relative;
+    padding: 2px;
+    line-height: 48px;
+    box-shadow: 0px 0px 59px 40px #0b2ec3;
+    border-radius: 9px;
+    margin-top: 100px;
+}
+#scorebox{
+    width: 600px;
+    height: 50px;
+    background: url("../pics/back1.jpg");
+    background-size: 100%;
+    margin: 5px auto;
+    position: relative;
+    padding: 2px;
+    line-height: 48px;
+    /* box-shadow: 5px 5px 11px #2a3c8c; */
+    border-radius: 9px;
+    margin-top: 100px;
+    box-shadow: 0px 0px 59px 40px #0b2ec3;
+    display: none;
+}
+#box{
+    
+    width: 600px;
+    height: 400px;
+    /* background-image: url("pics/back1.jpg"); */
+    background: url("../pics/8.JPG");
+    background-size: 100% 110%;
+    /*background: #13152f;*/
+    border: 2px solid #4d7cb5;
+    margin: 5px auto;
+    display: block;
+    position: relative;
+    /* box-shadow: 5px 5px 11px #2a3c8c; */
+    border-radius: 9px;;
+    margin-top: 35px;
+    box-shadow: 0px 0px 59px 40px #0b2ec3;
+    display: none;
+}
+#End{
+    width: 600px;
+    height: 400px;
+    background: url("../pics/back1.jpg");
+    background-size: 100%;
+    margin: 5px auto;
+    position: relative;
+    padding: 2px;
+    line-height: 48px;
+    box-shadow: 0px 0px 59px 40px #0b2ec3;
+    /*Color Start   #0b2ec3*/
+    /*Color Game Over   #c30b0b*/
+    /*Color Success   #0bc319*/
+    border-radius: 9px;
+    margin-top: 100px;
+    display: none;
+}
+/******************************* Score Box *******************************/
+
+#scoretxt{
+
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 9px;
+    color: #64b910;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0px 0px 14px #2442c4;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+#score{
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 50%;
+    color: #a7a7ec;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0px 0px 14px #2442c4;
+}
+#leveltxt{
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 9px;
+    color: #64b910;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0px 0px 14px #2442c4;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+#level{
+    position: relative;
+    padding: 6px;
+    color: #44b910;
+    background-color: black;
+    border-radius: 50%;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0px 0px 14px #2442c4;
+}
+#selectball{
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 9px;
+    color: #64b910;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0px 0px 14px #2442c4;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+
+/********************************** box **********************************/
+#player1{
+    width: 10px;
+    height: 100px;
+    background: chartreuse;
+    /*border: 0px solid tomato;*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 15px;
+}
+#ball1{
+    width: 20px;
+    height: 20px;
+    
+    background: url("../pics/2.png");
+    background-color: #f3efef;
+    /* background-color: #7b1313; */
+    background-size: 100%;
+    border: 1px solid #ce4451;
+    /* background: lightcoral; */
+    /*border: 0px solid tomato;*/
+    
+    border-radius: 50%;
+}
+#ball2{
+    width: 20px;
+    height: 20px;
+    
+    background: url("../pics/1.png");
+    background-color: #f3efef;
+    /* background-color: #7b1313; */
+    background-size: 100%;
+    border: 1px solid #ce4451;
+    /* background: lightcoral; */
+    /*border: 0px solid tomato;*/
+    
+    border-radius: 50%;
+}
+#ball{
+    width: 20px;
+    height: 20px;
+    
+    background: url("../pics/2.png");
+    background-color: #f3efef;
+    /* background-color: #7b1313; */
+    background-size: 100%;
+    border: 1px solid #ce4451;
+    /* background: lightcoral; */
+    /*border: 0px solid tomato;*/
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    border-radius: 50%;
+    
+}
+#player2{
+    width: 10px;
+    height: 100px;
+    background: lightsalmon;
+    /*border: 0px solid tomato;*/
+    position: absolute;
+    top: 0px;
+    left: 590px;
+    border-radius: 15px;
+}
+/********************************** Start Box **********************************/
+.smplay{
+    position: relative;
+    padding: 14px;
+    background-color: #710d0d5e;
+    border-radius: 9px;
+    color: #00BCD4;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: 71px;
+    line-height: 12.5;
+    box-shadow: 0px 0px 29px 16px #1078f9;
+    cursor: pointer;
+    
+
+    transition: 0.5s; 
+}
+
+
+.smplay:hover{
+    padding: 20px;
+
+    background-color:#0b2ec3  ;
+    border-radius: 15px;
+    color: aqua;
+    box-shadow: 0px 0px 29px 16px #00bcd4;
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************** End Box **********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
