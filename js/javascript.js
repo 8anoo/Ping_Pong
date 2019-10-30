@@ -1,6 +1,10 @@
 /*****************************  Start And Boxs  ******************************/
 
-/******mdoa*****/
+/******mdoa
+ * 
+ * moda
+ * 
+ * *****/
 var Single = document.querySelector('#Single');
 var Multi = document.querySelector('#Multi');
 
