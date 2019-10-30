@@ -40,8 +40,13 @@ var p2y;
 var x;
 var y;
 
+//player1
 var upstate = false;
 var downstate = false;
+
+var upstate2 =false;
+var downstate2 = false;
+
 
 //Set Interval Of ball
 var ballinterval;
@@ -49,6 +54,10 @@ var ballinterval;
 //Set Interval Of Player1
 var up;
 var down;
+
+//Set Interval Of Player2
+var up2;
+var down2;
 
 
 //Statue Of Play (Single || Multi)
@@ -59,8 +68,6 @@ var multiplay = false;
 //Boolean(move)=false;
 
 //var b =function(){};
-
-
 
 function typemovement(){
     if( ( (y>=p1y) && (y<=(p1y+20)) ) || ( (y>=(p1y+80)) && (y<=(p1y+100)) ) ){
@@ -177,7 +184,36 @@ function start() {
 
             addy();
 
-            if (y >= 380) {
+
+
+            /////////////// of player 2
+            //// game over 
+            if ((x >= 570) && ((y < p2y) || (y > (p2y + 100)))) {
+
+
+                movebr = false;
+                move = false;
+
+                restore();
+
+            }
+            //Score Plus 
+             else if ((x >= 570) && ((y >= p2y) || (y <= (p2y + 100)))) {
+
+
+                //for Method Of Movment
+                typemovement();
+                
+
+                scorechange();
+
+
+
+                movebr = false;
+                movebl = true;
+
+
+            } else if (y >= 380) {
                 movebr = false;
                 movetr = true;
             } else if (x >= 570) {
@@ -191,7 +227,41 @@ function start() {
 
             miny();
 
-            if (x >= 570) {
+
+            ///////////////// of player 2
+            p1y = player1.offsetTop;
+            p2y = player2.offsetTop;
+
+            // Game Over /////////////////////////////
+            if ((x >= 570) && ((y < p2y) || (y > (p2y + 100)))) {
+
+
+                movetr = false;
+                move = false;
+
+                restore()
+                
+
+
+
+
+            }//Score Plus 
+            else if ((x >= 570) && ((y >= p2y) || (y <= (p2y + 100)))) {
+
+                //debugger;
+                
+                
+                //for Method Of Movment
+                typemovement();
+
+
+                // speedmovementy = 1.5;
+                scorechange();
+
+                movetr = false;
+                movetl = true;
+
+            } else if (x >= 570) {
                 //debugger;
                 movetr = false;
                 movetl = true;
@@ -201,6 +271,7 @@ function start() {
             }
         } else if (movetl == true) {
             //top && left
+            //moda1
             minx();
 
             miny();
@@ -287,7 +358,7 @@ function start() {
             }
 
         }
-        if (move == true) {
+        if ((move == true) && (multiplay == false)) {
             player2.style.top = (y - 50) + "px";
         }
 
@@ -295,31 +366,59 @@ function start() {
 }
 addEventListener("keyup", function (e) {
 
+    //up
+           // player 2            // player 1
     if ((e.keyCode == 104) || (e.keyCode == 87)) {
-        //else if ((e.keyCode == 104) >> 8 || (e.keyCode == 87) >> w) {
-        //up
+        debugger;
+        
+        //single play
+        if(singleplay == true){
+            //default player 1
+            upstate = false;
+            this.clearInterval(up);
+        } // multui play
+        else if(singleplay == false){
+            //player 1
+            if(e.keyCode == 87){
+                upstate = false;
+                this.clearInterval(up);
+            }//player 2
+            else if(e.keyCode == 104){
+                upstate2 = false;
+                this.clearInterval(up2);
+            }
 
-        upstate = false;
-        this.clearInterval(up);
-
-        //}    
-    } else if ((e.keyCode == 101) || (e.keyCode == 83)) {
-        //} else if ((e.keyCode == 101 >> 5) || (e.keyCode == 83 >> s)) {
-        //down
-        downstate = false;
-        this.clearInterval(down);
-
-
+        }
     }
-    // else if (e.keyCode == 38) {
-    // }
-    // else if (e.keyCode == 40) {
-    // }
+        //down
+        //}             // player 2       //player 1    
+     else if ((e.keyCode == 101) || (e.keyCode == 83)) {
 
+        
+         //single play
+         if(singleplay == true){
+            //default player 1
+            downstate = false;
+            this.clearInterval(down);
+
+        } // multui play
+        else if(singleplay == false){
+            //player 1
+            if(e.keyCode == 83){
+                downstate = false;
+                this.clearInterval(down);
+            }//player 2
+            else if(e.keyCode == 101){
+                downstate2 = false;
+                this.clearInterval(down2); 
+            }
+        }
+    }
 
 })
-document.addEventListener("keypress", function (e) {
-    
+addEventListener("keypress", function (e) {
+
+
     /*Space*/
     if (e.keyCode == 32) {
         //debugger;
@@ -348,46 +447,135 @@ document.addEventListener("keypress", function (e) {
             start();
         }
     }
-    else if ((e.keyCode == 56) || (e.keyCode == 119) || (e.keyCode == 38)) {
-        //key up
-
+    ////// up
+    else if ((e.keyCode == 56) || (e.keyCode == 119)) {
         //else if (e.keyCode == 104) {
         //up
         
 
-        if (upstate == false) {
-            downstate = false;
-            this.clearInterval(down);
 
-
-
-
-            upstate = true;
-            up = setInterval(function () {
-                p1y = player1.offsetTop;
-                //if()
-                if (!(p1y < (1)))
-                    p1y = p1y - 6;
-                player1.style.top = p1y + "px";
-            }, speedplayer)
+        //// case in single play
+        if(singleplay ==true){
+            if (upstate == false) {
+                downstate = false;
+                this.clearInterval(down);
+    
+    
+    
+    
+                upstate = true;
+                up = setInterval(function () {
+                    p1y = player1.offsetTop;
+                    //if()
+                    if (!(p1y < (1)))
+                        p1y = p1y - 6;
+                    player1.style.top = p1y + "px";
+                }, speedplayer)
+            }
+        } // case in multi play
+         else if(singleplay == false){
+            
+            //player 1 
+            if(e.keyCode == 119){
+                if (upstate == false) {
+                    downstate = false;
+                    this.clearInterval(down);
+        
+        
+        
+        
+                    upstate = true;
+                    up = setInterval(function () {
+                        p1y = player1.offsetTop;
+                        //if()
+                        if (!(p1y < (1)))
+                            p1y = p1y - 6;
+                        player1.style.top = p1y + "px";
+                    }, speedplayer)
+                }
+            }// player 2
+            else if(e.keyCode == 56){
+                if (upstate2 == false) {
+                    downstate2 = false;
+                    this.clearInterval(down2);
+        
+        
+        
+        
+                    upstate2 = true;
+                    up2 = setInterval(function () {
+                        p2y = player2.offsetTop;
+                        //if()
+                        if (!(p2y < (1)))
+                            p2y = p2y - 6;
+                        player2.style.top = p2y + "px";
+                    }, speedplayer)
+                }  
+            }
         }
-    } else if ((e.keyCode == 53) || (e.keyCode == 115) || (e.keyCode == 40)) {
-        //Key Down
+        
+
+
+    }////// down
+     else if ((e.keyCode == 53) || (e.keyCode == 115)) {
+         
         //} else if (e.keyCode == 101) {
         //down
-        if (downstate == false) {
+        
 
-            upstate = false;
-            this.clearInterval(up);
+        //in single play 
+        if(singleplay == true){
+            if (downstate == false) {
 
-            downstate = true;
-            down = setInterval(function () {
-                p1y = player1.offsetTop;
-                //if()
-                if (!(p1y > (400 - 101)))
-                    p1y = p1y + 6;
-                player1.style.top = p1y + "px";
-            }, speedplayer)
+                upstate = false;
+                this.clearInterval(up);
+    
+                downstate = true;
+                down = setInterval(function () {
+                    p1y = player1.offsetTop;
+                    //if()
+                    if (!(p1y > (400 - 101)))
+                        p1y = p1y + 6;
+                    player1.style.top = p1y + "px";
+                }, speedplayer)
+            }
+        }//* multi play
+        else if(singleplay == false){
+            // player 1
+            if(e.keyCode == 115){
+                if (downstate == false) {
+
+                    upstate = false;
+                    this.clearInterval(up);
+        
+                    downstate = true;
+                    down = setInterval(function () {
+                        p1y = player1.offsetTop;
+                        //if()
+                        if (!(p1y > (400 - 101)))
+                            p1y = p1y + 6;
+                        player1.style.top = p1y + "px";
+                    }, speedplayer)
+                }
+            }//player 2
+            else if(e.keyCode == 53){
+                
+                if (downstate2 == false) {
+
+                    upstate2 = false;
+                    this.clearInterval(up2);
+        
+                    downstate2 = true;
+                    down2 = setInterval(function () {
+                        p2y = player2.offsetTop;
+                        //if()
+                        if (!(p2y > (400 - 101)))
+                            p2y = p2y + 6;
+                        player2.style.top = p2y + "px";
+                    }, speedplayer)
+                }
+            }
+
         }
 
     }
@@ -408,10 +596,21 @@ imgs.addEventListener("click",function(e){
 
 /*****************************  Start  ******************************/
 Single.addEventListener('click',function(){
-    
     StartBox.style.display="none";
     ScoreBox.style.display="block";
     Box.style.display="block";
+    singleplay=true;
+    multiplay=false;
+
+
+})
+
+Multi.addEventListener('click',function(){
+    StartBox.style.display="none";
+    ScoreBox.style.display="block";
+    Box.style.display="block";
+    singleplay=false;
+    multiplay=true;
 
 
 })
