@@ -207,11 +207,14 @@ function start() {
 
             addy();
 
+            p1y = player1.offsetTop;
+            p2y = player2.offsetTop;
 
 
             /////////////// of player 2
             //// game over 
             if ((x >= 570) && ((y < p2y) || (y > (p2y + 100)))) {
+               debugger; 
 
 
                 movebr = false;
@@ -347,6 +350,10 @@ function start() {
 
             addy();
 
+            p1y = player1.offsetTop;
+            p2y = player2.offsetTop;
+
+            
             if ((x <= 10) && ((y < p1y) || (y > (p1y + 100)))) {
 
 
