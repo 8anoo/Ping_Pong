@@ -2,6 +2,7 @@
 
 /******mdoa*****/
 /** moda2 */
+/*coment 2 */
 var Single = document.querySelector('#Single');
 var Multi = document.querySelector('#Multi');
 
