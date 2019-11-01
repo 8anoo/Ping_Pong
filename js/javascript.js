@@ -20,6 +20,9 @@ var ball = document.querySelector("#ball");
 var scorespan = document.querySelector("#score");
 var levelspan = document.querySelector("#level");
 
+var scorecon = document.querySelector("#scorecon");
+var levelcon = document.querySelector("#levelcon");
+
 var pause = true;
 
 var speedinterval = 10;
@@ -29,7 +32,7 @@ var speedmovementy = 2.5;
 var speedplayer = 20;
 
 var score = 0;
-var level = 5;
+var level = 1;
 
 //
 var move = false;
@@ -91,6 +94,15 @@ function typemovement(){
 
 function restore() {
     clearInterval(ballinterval);
+
+
+
+    /* Congratulations */
+    scorecon.innerText=score;
+    levelcon.innerText=level
+    /**********************/
+
+
     ball.style.top = "0px";
     ball.style.left = "10px";
 
@@ -103,16 +115,21 @@ function restore() {
     scorespan.innerText = score;
 
 
-    levelspan.innerText = "5";
+    levelspan.innerText = "1";
     levelspan.style.color = "#44b910";
-    levelspan.style.backgroundcolor = "black";
+    levelspan.style.backgroundColor = "#000000";
+    // levelspan.style.backgroundcolor = "rgb(0, 0, 0);";
 
     // speedmovement = 2;
     speedmovementx = 2;
     speedmovementy = 2.5;
 
-    level=5;
+    level=1;
 
+    StartBox.style.display="none";
+    EndBox.style.display="block";
+    ScoreBox.style.display="none";
+    Box.style.display="none";
 }
 
 function scorechange() {
@@ -121,29 +138,30 @@ function scorechange() {
 
 
     if (score == 5) {
-        level = level - parseInt("1");
+        level = level + parseInt("1");
         levelspan.innerText = level;
         levelspan.style.color = "#ffeb3b";
 
         speedmovementx = 3;
         speedmovementy = 2.5;
     } else if (score == 10) {
-        level = level - parseInt("1");
+        level = level + parseInt("1");
         levelspan.innerText = level;
         levelspan.style.color = "#ffc107";
 
         speedmovementx = 4;
         speedmovementy = 2.5;
     } else if (score == 15) {
-        level = level - parseInt("1");
+        level = level + parseInt("1");
         levelspan.innerText = level;
         levelspan.style.color = "#ff5722";
 
         speedmovementx = 5;
         speedmovementy = 2.5;
     } else if (score == 20) {
-        level = level - parseInt("1");
+        level = level + parseInt("1");
         levelspan.innerText = level;
+        
         levelspan.style.backgroundColor = "#ff5722";
         levelspan.style.color = "black";
 

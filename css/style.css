@@ -57,6 +57,7 @@ body{
     display: none;
 }
 #End{
+    /* display: none; */
     width: 600px;
     height: 400px;
     background: url("../pics/back1.jpg");
@@ -65,14 +66,27 @@ body{
     position: relative;
     padding: 2px;
     line-height: 48px;
-    box-shadow: 0px 0px 59px 40px #0b2ec3;
-    /*Color Start   #0b2ec3*/
-    /*Color Game Over   #c30b0b*/
-    /*Color Success   #0bc319*/
+    box-shadow: 0px 0px 29px 39px #9bb50b;
     border-radius: 9px;
     margin-top: 100px;
+
     display: none;
+    /* flex-direction: column;
+    justify-content: center;
+
+
+    display: flex;
+    position: absolute;
+    top: 90px;
+    left: 44px; */
 }
+
+#con{
+    margin-left: 3%;
+    margin-top: 22px;
+}
+
+
 /******************************* Score Box *******************************/
 
 #scoretxt{
@@ -287,12 +301,49 @@ body{
 
 
 
+.sl{
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 9px;
+    color: #64b910;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 58px;
+    box-shadow: 22px 8px 13px 12px #020406;
+    margin-left: 20px;
+    margin-right: 10px;
+}
 
 
 
 
 
+#scorecon{
+    position: relative;
+    padding: 6px;
+    background-color: black;
+    border-radius: 50%;
+    color: #a7a7ec;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 34px;
+    box-shadow: 0px 0px 14px #2442c4;
+}
 
+
+
+#levelcon{
+    position: relative;
+    padding: 6px;
+    color: #44b910;
+    background-color: black;
+    border-radius: 50%;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 34px;
+    box-shadow: 0px 0px 14px #2442c4;
+}
 
 
 
