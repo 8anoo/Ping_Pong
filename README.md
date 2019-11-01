@@ -1,11 +1,17 @@
 -------- Ping Pong -------
 
+    **  Start 
+            >>>>  You Can Start With Press ( Space )  <<<<
+    **  Pause
+            >>>>  You Can Pause With Press ( P )  <<<<
+    **  Resume
+            >>>>  You Can Resume With Press ( R )  <<<<
 
-there are two ways to play 
-        1- Single
-        2- Multi
+    **  there are two ways to play 
+            1- Single
+            2- Multi
 
-        Movement >>>>
+    **  Movement >>>>
             1- Single
                 you Can Move With ( 8 , W ) As Up << Move Player To Up>>
                                   ( 5 , S ) As Down << Move Player To Down>>
@@ -16,7 +22,7 @@ there are two ways to play
                 (Player < 2 > )
                     you Can Move With ( 8 ) As Up << Move Player To Up>>
                                       ( 5 ) As Down << Move Player To Down>>
-        Score    >>>> You Will Score Number Of Points Even You Push The Ball
+    **  Score    >>>> You Will Score Number Of Points Even You Push The Ball
 
-        Levels   >>>> You Will Begin From Level (1) To Level (5)
+    **  Levels   >>>> You Will Begin From Level (1) To Level (5)
                       In Every Level The Ball Will Fast Every Time.
