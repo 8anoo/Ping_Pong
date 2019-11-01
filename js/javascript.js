@@ -83,6 +83,7 @@ function typemovement(){
         speedmovementy = 1.5;                     
         }
         else if(( (y>=(p1y+45)) && (y<=(p1y+55)) )){
+            
             speedmovementy = 1; 
         }
 }
@@ -372,7 +373,7 @@ addEventListener("keyup", function (e) {
     //up
            // player 2            // player 1
     if ((e.keyCode == 104) || (e.keyCode == 87)) {
-        debugger;
+        //debugger;
         
         //single play
         if(singleplay == true){
