@@ -235,6 +235,7 @@ function start() {
 
                 if(multiplay ==true){
                     scorechange();
+                    //first 1
                 }
 
 
