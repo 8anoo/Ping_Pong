@@ -133,9 +133,11 @@ function restore() {
 }
 
 function scorechange() {
-    score = score + parseInt("1");
-    scorespan.innerText = score;
-
+        
+        score = score + parseInt("1");
+        scorespan.innerText = score;
+   
+    
 
     if (score == 5) {
         level = level + parseInt("1");
@@ -214,7 +216,7 @@ function start() {
             /////////////// of player 2
             //// game over 
             if ((x >= 570) && ((y < p2y) || (y > (p2y + 100)))) {
-               debugger; 
+               
 
 
                 movebr = false;
@@ -231,7 +233,9 @@ function start() {
                 typemovement();
                 
 
-                scorechange();
+                if(multiplay ==true){
+                    scorechange();
+                }
 
 
 
@@ -282,7 +286,9 @@ function start() {
 
 
                 // speedmovementy = 1.5;
-                scorechange();
+                if(multiplay ==true){
+                    scorechange();
+                }
 
                 movetr = false;
                 movetl = true;
